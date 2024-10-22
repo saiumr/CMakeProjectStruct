@@ -1,0 +1,8 @@
+include(CMakeDependentOption)
+
+option(U_WANT "Do you want...?" ON)
+option(I_WANT "I want to..."    ON)
+
+#cmake_dependent_option(BUILD_EXAMPLES "Build examples" ON "U_WANT;I_WANT" ON)
+cmake_dependent_option(BUILD_EXAMPLES "Build examples" ON I_WANT ON)
+
